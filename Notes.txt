@@ -1,0 +1,30 @@
+КОМАНДЫ:
+    yarn hardhat coverage - запускает команду которая проверяет какие строки кода в контрактах покрыты тестами
+    yarn hardhat clean - очистить скомпилированные контракты
+    yarn hardhat compile - скомпилировать контракты
+    yarn hardhat node - запустить ноду для слежения за транзацкиями
+        yarn hardhat run [scriptname] --network localhost чтоб запустить скрипт под локальной нодой
+    yarn hardhat test - запустить тесты из папки tests
+    yarn hardhat test --grep amount-funded - запустить тесты в описании it("") которых есть переданная строка (amount funded)
+    yarn hardhat run test.js --network hardhat - флаг нетворк позволяет переписать дефолтную сеть при запуске скрипта
+
+
+TYPESCRIPT:
+    ts packages - yarn add @typechain/ethers-v5 @typechain/hardhat @types/chai @types/node @types/mocha ts-node typechain typescript --dev
+    Typechain для типизации контрактов, yarn hardhat typechain создает d.ts файлы с типизацией
+
+SOLIDITY
+    ХРАНИЛИЩЕ (STORAGE)
+        все переменные хранятся в хранилище таким образом
+        [0] 0x00...19
+        [1] 0x00...01
+        и т.д.
+        однако константы и иммутабельные переменные не занимают места в хранилище, они хранятся в байт коде контракта, это экономит газ
+        переменные объявленные внутри функции существуют только пока выполняется функция
+
+    Конвенции
+        наименоевание переменных которые хранятся в хранилище выглядит так: s_[name]
+        наименоевание иммутабельных переменных выглядит так: i_[name]
+        наименоевание констант выглядит так: VAR_NAME
+
+
